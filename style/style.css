@@ -19,6 +19,13 @@ body{
 	
 
 }
+#nav p{
+	font-size:40px;
+	float:left;
+	margin:10px;
+	line-height:75px;
+	padding-left:30px;
+}
 #menu{
 	float:left;
 
@@ -79,6 +86,13 @@ color:#7f8c8d;
 	height:80px;
 	display:block;
 }
+#section #section-top p {
+	font-size:20px;
+	padding-left:50px;
+
+
+
+}
 .section-top-left{
 	width:1000px;
 	height:80px;
@@ -98,36 +112,17 @@ color:#7f8c8d;
 #section-op{
 
 	padding-top:15px;
-}
 
-#section-left{
+}
+#section-op .column{
 	width:300px;
 	height:250px;
 	float:left;
 	padding: 0px 50px 0px 50px;
 }
-#section-left img{
-	text-align: center;
-	}
-
-#section-center{
-	width:300px;
-	height:250px;
-	float:left;
-	padding: 0px 50px 0px 50px;
+#section-op .column p{
+	font-size: 10px;
 }
-#section-center img{
-	text-align: center;
-	}
-#section-right{
-	width:300px;
-	height:250px;
-	float:left;
-	padding: 0px 50px 0px 50px;
-}
-#section-right img{
-	text-align: center;
-	}
 #footer{
 	height:300px;
 	width:1200px;
@@ -148,6 +143,9 @@ color:#7f8c8d;
     -moz-box-shadow: 0 10px 6px -6px #7D7D7D;
      box-shadow: 0 5px 6px -6px #7D7D7D;
      font-weight: bold;
+}
+.footer-col p:nth-child(2){
+	font-size:16px
 }
 
 td{   
