@@ -5,18 +5,65 @@
 <link type="text/css" rel="stylesheet" href="style/style.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script language="javascript">
+$(document).ready(function(){
+	
 		$.ajax({
-		    url : "acticles.json",
-		    type: "GET",
-		    dataType : "json",
-		    success: function(data, textStatus, jqXHR)
-		    {
-		        for (var i = data.entities.length - 1; i >= 0; i--) {
-		          $('#section-op').append("<div class='column'><img src='img/"+data.entities[i].image+"' /><h3>"+data.entities[i].title+"</h3><p>"+ data.entities[i].body+"</p></div>");
-		        };
-		        
-		    },
+			  method: "GET",
+			  url: "acticles.json"
+	
+			})
+			  .done(function( object ) {
+			  	for (var  i= 0; i < object.entities.length -2  ; i++) {
+			  	
+			   $("#section-op").append('<div class="column"><img src="img/'+object.entities[i].image+'"/><h3>'+object.entities[i].title+'</h3><p>'+object.entities[i].body+'</p></div>');
+			 
+				};
+		 });
 });
+
+
+	function load3(){
+		 clean();
+		document.getElementById("closeReadMore").style.display="none";
+		document.getElementById("readMore").style.display="block";
+
+		$.ajax({
+			  method: "GET",
+			  url: "acticles.json"
+	
+			})
+			  .done(function( object ) {
+			  	for (var  i= 0; i < object.entities.length -2  ; i++) {
+			  	
+			   $("#section-op").append('<div class="column"><img src="img/'+object.entities[i].image+'"/><h3>'+object.entities[i].title+'</h3><p>'+object.entities[i].body+'</p></div>');
+			 
+				};
+		 });
+	}
+
+	function load5(){
+		 clean();
+
+		document.getElementById("readMore").style.display="none";
+		document.getElementById("closeReadMore").style.display="block";
+
+		$.ajax({
+			  method: "GET",
+			  url: "acticles.json"
+	
+			})
+			  .done(function( object ) {
+			  	for (var  i= 0; i < object.entities.length ; i++) {
+			  	
+			   $("#section-op").append('<div class="column"><img src="img/'+object.entities[i].image+'"/><h3>'+object.entities[i].title+'</h3><p>'+object.entities[i].body+'</p></div>');
+			 
+				};
+		 });
+	}
+	function clean(){
+		$("#section-op").empty();
+	}
+
 </script>
 </head>
 
@@ -41,17 +88,24 @@
 	 </div>
 	<div id="section">
 		<div id="section-top">
-		<div class="section-top-left">
-			<p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...There is no one who loves pain itself, who seeks</p>
-		</div>
-		<button class="button">View Portfolio</button>
-		
+			<div class="section-top-left">
+				<p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...There is no one who loves pain itself, who seeks</p>
+			</div>
+			<button class="button">View Portfolio</button>
+			
 		</div>
 		<div id="section-op">
+			
+			
 		
-				
-	
-		</div>		
+		</div>	
+		<div style="float:right;margin-right:600px;">
+
+			<a id="readMore" onclick="load5()"> >> More << </a>	
+			<a id="closeReadMore" onclick="load3()"> >> More <<</a>
+
+		</div>
+		
 	</div>
 </div>
 <div id="footer">
